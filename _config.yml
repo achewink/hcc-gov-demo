@@ -5,7 +5,7 @@ redcarpet:
 highlighter:        pygments
 
 #github settings
-baseurl:            
+baseurl:            /hcc-gov-demo
 assetsurl:          /assets
 jsurl:              /assets/js
 cssurl:             /assets/css
