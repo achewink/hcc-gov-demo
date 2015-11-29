@@ -6,10 +6,10 @@ highlighter:        pygments
 
 #github settings
 baseurl:            /hcc-gov-demo
-assetsurl:          hcc-gov-demo/assets
-jsurl:              hcc-gov-demo/assets/js
-cssurl:             hcc-gov-demo/assets/css
-imgurl:             hcc-gov-demo/assets/img
+assetsurl:          /hcc-gov-demo/assets
+jsurl:              /hcc-gov-demo/assets/js
+cssurl:             /hcc-gov-demo/assets/css
+imgurl:             /hcc-gov-demo/assets/img
 
 gem:
 
