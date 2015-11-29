@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<!-- from head  -->
+{% include head.html %}
+
+<body>
+
+  <!-- navigation header here -->
+  {% include header2.html %}
+  <!-- end of header -->
+
+  <div class="top-main-nav hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-1">
+          <a href="/office">市府介紹</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#">公開資訊</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#">市民服務</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#">認識新竹</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#">相關連結</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ content }}
+
+  <!-- Fat footer here -->
+  {% include fat-footer.html %}
+  <!-- End of fat footer -->
+
+  <!-- Footer -->
+  {% include footer.html %}
+  <!-- End of footer -->
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
+  <!-- jQuery and Bootstrap JS at the bottom of body tag -->
+  <script src="{{site.baseurl}}/assets/js/bootstrap.js"></script>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<!-- from head  -->
+<head>
+  <meta charset="utf-8">
+  <title>Hsin Chu Govornmnet Demo</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon shortcut"
+      type="image/png"
+      href="/assets/img/icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/assets/css/main.css" media="screen" charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</head>
+
+
+<body>
+
+  <!-- navigation header here -->
+  <!-- home-brew hamberg -->
+<div class="hambg-cover bye">
+  <div class="close-btn js-hambg-close"><img src="/assets/img/X.svg" alt="close"></div>
+  <ul>
+    <li><a href="/office/">市府介紹</a></li>
+    <li><a href="">公開資訊</a></li>
+    <li><a href="">市民服務</a></li>
+    <li><a href="">認識新竹</a></li>
+    <li><a href="">相關連結</a></li>
+    <li><a href="">En/中/日</a></li>
+  </ul>
+</div>
+
+<div class="wrapping">
+  <!-- bs-header -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="clearfix">
+          <img class="js-hambg-open hambg-logo visible-xs" src="/assets/img/burger.svg" alt="nav">
+          <a class="navbar-brand" href="/"><img src="/assets/img/logo.svg" alt="logo"></a>
+          <!-- <img class="js-nav-search search-logo hambg-logo visible-xs pull-right" src="/assets/img/burger.svg" alt="nav"> -->
+          <span class="glyphicon glyphicon-search js-nav-search search-logo hambg-logo visible-xs pull-right" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-remove js-nav-search-close colse-logo hambg-logo visible-xs pull-right" aria-hidden="true"></span>
+        </div>
+        <div class="search-box visible-xs">
+          <form action="" class="form-inline">
+            <div class="form-group">
+              <input type="text" class="form-control" id="nav-search" placeholder="search">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li style="height:50px; padding-top:8px;">
+            <div class="search-box">
+              <form action="" class="form-inline">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="top-nav-search" placeholder="search">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" style="margin-top: 0px;">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          <li><a href="#lang">En / 中/ 日</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <!-- end of header -->
+
+
+  <div class="container custom">
+  <div class="row">
+    <div class="col-md-12">
+    <h1>里長聯絡資訊</h1>
+    <table class="table table-striped contact-info">
+      <thead>
+      <tr>
+        <th>姓名</th>
+        <th>村里名</th>
+        <th>電話</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$(document).ready(function(e) {
+  var ajaxresult = '';
+  $.ajax({
+    url: 'http://opendata.hccg.gov.tw/dataset/c9f33bea-1a8f-4d70-a8af-d0679e65965d/resource/fee99e15-3ada-4128-aa9d-453f44241468/download/20151119095625129.json',
+    success: function(result) {
+
+      for (var i = 0; i < result.length; i++) {
+        ajaxresult += '<tr><td>' +  result[i]['姓名'] + '</td><td>' + result[i]['里別'] + '</td><td>' + result[i]['行動電話'] + '</td>';
+      }
+      $('.contact-info tbody').html(ajaxresult);
+    }
+  })
+});
+</script>
+
+
+  <!-- Fat footer here -->
+  <div class="fat-footer hidden-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-2">
+        <div class="site-map-box">
+          <h2>市府介紹</h2>
+          <ul>
+            <li><a href="#">市長簡介</a></li>
+            <li><a href="#">市府團隊</a></li>
+            <li><a href="#">市府位置</a></li>
+            <li><a href="#">辦公室平面圖</a></li>
+            <li><a href="#">聯絡電話</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="site-map-box">
+          <h2>公開資訊</h2>
+          <ul>
+            <li><a href="#">市政新聞</a></li>
+            <li><a href="#">活動訊息</a></li>
+            <li><a href="#">一般公告</a></li>
+            <li><a href="#">徵才公告</a></li>
+            <li><a href="#">招標公告</a></li>
+            <li><a href="#">促參案公告</a></li>
+            <li><a href="#">市政公報</a></li>
+            <li><a href="#">市政統計</a></li>
+            <li><a href="#">市務會議記錄</a></li>
+            <li><a href="#">施政計畫</a></li>
+            <li><a href="#">施政報告</a></li>
+            <li><a href="#">出國報告</a></li>
+            <li><a href="#">預算報告</a></li>
+            <li><a href="#">開放資料</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="site-map-box">
+          <h2>市民服務</h2>
+          <ul>
+            <li><a href="#">市民申請e好辦</a></li>
+            <li><a href="#">市民信箱</a></li>
+            <li><a href="#">市民 APP</a></li>
+            <li><a href="#">市民手冊</a></li>
+            <li><a href="#">市民電子報</a></li>
+            <li><a href="#">常見問題 Q&A</a></li>
+            <li><a href="#">消費者申訴</a></li>
+            <li><a href="#">服務中心</a></li>
+            <li><a href="#">雙語詞彙</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="site-map-box">
+          <h2>認識新竹</h2>
+          <ul>
+            <li><a href="#">新竹沿革</a></li>
+            <li><a href="#">地理位置</a></li>
+            <li><a href="#">自然氣候</a></li>
+            <li><a href="#">產業發展</a></li>
+            <li><a href="#">市徽、花、樹、鳥</a></li>
+            <li><a href="#">風城影音館</a></li>
+            <li><a href="#">新竹姊妹市</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="site-map-box">
+          <h2>相關連結</h2>
+          <ul>
+            <li><a href="#">各處及一級機關</a></li>
+            <li><a href="#">區公所及二級機關</a></li>
+            <li><a href="#">本府其他相關網站</a></li>
+            <li><a href="#">外部相關網站</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- End of fat footer -->
+
+  <!-- Footer -->
+  <footer class="bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-11 text-left">
+            <p>市府地址: 30051 新竹市中正路120號</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-11 text-left">
+            <p>服務時間: 週一至週五 8：00~17：00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-offset-1 col-xs-5 text-left">
+            <p>總機: 03-5216121</p>
+            全天專線: 1999
+          </div>
+          <div class="col-xs-2">
+            <img src="/assets/img/line.svg" alt="join-line" style="margin-top:2px;">
+          </div>
+          <div class="col-xs-2">
+            <img src="/assets/img/f.svg" alt="facebook">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- End of footer -->
+
+  <!-- JavaScript -->
+
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <!-- jQuery and Bootstrap JS at the bottom of body tag -->
+  <script src="/assets/js/bootstrap.js"></script>
+
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!-- from head  -->
+{% include head.html %}
+
+<body>
+
+  <!-- navigation header here -->
+  {% include header2.html %}
+  <!-- end of header -->
+
+
+  {{ content }}
+
+  <!-- Fat footer here -->
+  {% include fat-footer.html %}
+  <!-- End of fat footer -->
+
+  <!-- Footer -->
+  {% include footer.html %}
+  <!-- End of footer -->
+
+  <!-- JavaScript -->
+
+  <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
+  <!-- jQuery and Bootstrap JS at the bottom of body tag -->
+  <script src="{{site.baseurl}}/assets/js/bootstrap.js"></script>
+
+</body>
+
+</html>
+
+</html>
